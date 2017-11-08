@@ -137,9 +137,9 @@ for run in range(runNum):
         roc_auc[run, 0] = auc(fpr[run, 0], tpr[run, 0])
         precisionNet[run, 0] = precision_score(trainingLabels[:,1], predicted_trainingLabels[:, 1])
         recallNet[run, 0] = recall_score(trainingLabels[:,1], predicted_trainingLabels[:, 1])
-        accNet[run,0] = accuracy_score(trainingLabels[:,i], predicted_trainingLabels[:, 1])
+        accNet[run,0] = accuracy_score(trainingLabels[:,1], predicted_trainingLabels[:, 1])
         f1Net[run,0] = f1_score(trainingLabels[:,i], predicted_trainingLabels[:, 1])
-        print('Run %d :i %d :precisionNet: %.4f' % ( run + 1,i, precisionNet[run,0]))
+        print('Run %d :precisionNet: %.4f' % ( run + 1, precisionNet[run,0]))
         AUCNet[run,0] = roc_auc_score(trainingLabels[:,1], soft_targets_training[:,1])
         print('Run %d:AUC_Net: %.4f' % (run+1, AUCNet[run,0]))        
         
